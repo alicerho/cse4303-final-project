@@ -1,0 +1,21 @@
+=== Logistic Regression Report ===
+              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        50
+           1       1.00      1.00      1.00        50
+
+    accuracy                           1.00       100
+   macro avg       1.00      1.00      1.00       100
+weighted avg       1.00      1.00      1.00       100
+
+ROC AUC: 1.0
+
+=== Surface Feature Importances ===
+punct_count: 0.077790
+num_words: 0.076238
+num_sents: 0.052328
+num_chars: 0.050013
+is_question: 0.044175
+avg_word_len: 0.003632
+num_verbs: 0.000000
+num_subords: 0.000000
