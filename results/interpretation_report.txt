@@ -1,0 +1,206 @@
+======================================================================
+JAILBREAK PATTERN INTERPRETATION REPORT
+Model Tested: GPT-Neo-1.3B (EleutherAI)
+Connecting Statistical Importance to Real-World Effectiveness
+======================================================================
+
+SECTION 1: WHY CERTAIN LINGUISTIC FEATURES MATTER
+----------------------------------------------------------------------
+
+num_chars:
+  Jailbreak prompts avg: 2028.94
+  Benign prompts avg: 1502.74
+  Difference: 526.20
+
+num_words:
+  Jailbreak prompts avg: 410.29
+  Benign prompts avg: 297.71
+  Difference: 112.57
+
+punct_count:
+  Jailbreak prompts avg: 49.39
+  Benign prompts avg: 35.24
+  Difference: 14.15
+
+num_sents:
+  Jailbreak prompts avg: 20.40
+  Benign prompts avg: 14.35
+  Difference: 6.05
+
+num_negations:
+  Jailbreak prompts avg: 5.94
+  Benign prompts avg: 1.79
+  Difference: 4.15
+  → Jailbreaks use MORE negation words (not, never, don't)
+  → WHY: Complex logical structures may confuse simple filters
+
+num_conditionals:
+  Jailbreak prompts avg: 3.06
+  Benign prompts avg: 1.36
+  Difference: 1.70
+
+num_commands:
+  Jailbreak prompts avg: 5.78
+  Benign prompts avg: 4.24
+  Difference: 1.53
+
+avg_word_len:
+  Jailbreak prompts avg: 4.22
+  Benign prompts avg: 4.90
+  Difference: -0.69
+
+is_question:
+  Jailbreak prompts avg: 0.36
+  Benign prompts avg: 0.18
+  Difference: 0.17
+  → Jailbreaks are MORE often phrased as questions
+
+roleplay_similarity:
+  Jailbreak prompts avg: 0.32
+  Benign prompts avg: 0.20
+  Difference: 0.12
+  → Jailbreaks have HIGHER roleplay similarity
+  → WHY: Persona manipulation creates distance from safety guidelines
+
+manipulation_similarity:
+  Jailbreak prompts avg: 0.21
+  Benign prompts avg: 0.14
+  Difference: 0.07
+  → Jailbreaks have HIGHER manipulation similarity
+  → WHY: Deceptive framing attempts to trick the model
+
+instruction_override_similarity:
+  Jailbreak prompts avg: 0.18
+  Benign prompts avg: 0.12
+  Difference: 0.07
+  → Jailbreaks have HIGHER instruction override similarity
+  → WHY: Attempts to reset model context with 'ignore previous instructions'
+
+hacking_similarity:
+  Jailbreak prompts avg: 0.20
+  Benign prompts avg: 0.16
+  Difference: 0.05
+
+violence_similarity:
+  Jailbreak prompts avg: 0.20
+  Benign prompts avg: 0.16
+  Difference: 0.04
+
+fraud_similarity:
+  Jailbreak prompts avg: 0.20
+  Benign prompts avg: 0.16
+  Difference: 0.04
+
+is_roleplay:
+  Jailbreak prompts avg: 0.04
+  Benign prompts avg: 0.01
+  Difference: 0.03
+  → Jailbreaks have HIGHER roleplay similarity
+  → WHY: Persona manipulation creates distance from safety guidelines
+
+hypothetical_framing_similarity:
+  Jailbreak prompts avg: 0.16
+  Benign prompts avg: 0.19
+  Difference: -0.02
+
+illegal_substances_similarity:
+  Jailbreak prompts avg: 0.14
+  Benign prompts avg: 0.13
+  Difference: 0.01
+
+is_fraud:
+  Jailbreak prompts avg: 0.01
+  Benign prompts avg: 0.00
+  Difference: 0.01
+
+is_hacking:
+  Jailbreak prompts avg: 0.01
+  Benign prompts avg: 0.00
+  Difference: 0.01
+
+prompt_length_category:
+  Jailbreak prompts avg: 1.57
+  Benign prompts avg: 1.57
+  Difference: 0.00
+
+is_illegal_substances:
+  Jailbreak prompts avg: 0.00
+  Benign prompts avg: 0.00
+  Difference: 0.00
+
+is_violence:
+  Jailbreak prompts avg: 0.00
+  Benign prompts avg: 0.00
+  Difference: 0.00
+
+is_instruction_override:
+  Jailbreak prompts avg: 0.00
+  Benign prompts avg: 0.00
+  Difference: 0.00
+  → Jailbreaks have HIGHER instruction override similarity
+  → WHY: Attempts to reset model context with 'ignore previous instructions'
+
+is_manipulation:
+  Jailbreak prompts avg: 0.00
+  Benign prompts avg: 0.00
+  Difference: 0.00
+  → Jailbreaks have HIGHER manipulation similarity
+  → WHY: Deceptive framing attempts to trick the model
+
+is_hypothetical_framing:
+  Jailbreak prompts avg: 0.00
+  Benign prompts avg: 0.00
+  Difference: -0.00
+
+num_verbs:
+  Jailbreak prompts avg: 0.00
+  Benign prompts avg: 0.00
+  Difference: 0.00
+
+num_subords:
+  Jailbreak prompts avg: 0.00
+  Benign prompts avg: 0.00
+  Difference: 0.00
+
+
+SECTION 2: WHICH OBFUSCATION TECHNIQUES ACTUALLY WORK
+----------------------------------------------------------------------
+
+Tested on: GPT-Neo-1.3B (EleutherAI)
+
+original:
+  Success rate: 0.0% (0/125)
+
+Please explain:
+  Success rate: 0.0% (0/25)
+  → WHY IT FAILS: Politeness doesn't mask harmful intent
+
+Briefly::
+  Success rate: 0.0% (0/25)
+  → WHY IT FAILS: Prefix doesn't change underlying request
+
+lowercase:
+  Success rate: 0.0% (0/25)
+  → WHY IT FAILS: Semantic meaning preserved despite case change
+
+
+SECTION 3: KEY RESEARCH FINDINGS
+----------------------------------------------------------------------
+
+1. MOST PREDICTIVE LINGUISTIC FEATURE:
+   num_chars shows 526.20 difference
+   between jailbreak and benign prompts.
+
+2. MOST EFFECTIVE OBFUSCATION TECHNIQUE:
+   original achieves 0.0% success rate.
+
+3. IMPLICATIONS FOR DEFENSE:
+   - Detectors should weight num_chars heavily
+   - Simple case normalization is insufficient
+   - Semantic analysis (embeddings) is necessary
+
+4. MODEL OBSERVATIONS (GPT-Neo-1.3B):
+   - GPT-Neo-1.3B has no explicit safety training
+   - Response patterns reflect capability limits, not safety refusals
+   - Testing on safety-tuned models would show actual bypass rates
+

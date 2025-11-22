@@ -1,21 +1,41 @@
 === Logistic Regression Report ===
               precision    recall  f1-score   support
 
-           0       1.00      1.00      1.00        50
-           1       1.00      1.00      1.00        50
+           0       0.98      0.80      0.88      3892
+           1       0.35      0.86      0.50       492
 
-    accuracy                           1.00       100
-   macro avg       1.00      1.00      1.00       100
-weighted avg       1.00      1.00      1.00       100
+    accuracy                           0.80      4384
+   macro avg       0.66      0.83      0.69      4384
+weighted avg       0.91      0.80      0.83      4384
 
-ROC AUC: 1.0
+ROC AUC: 0.9083945387244211
 
 === Surface Feature Importances ===
-punct_count: 0.077790
-num_words: 0.076238
-num_sents: 0.052328
-num_chars: 0.050013
-is_question: 0.044175
-avg_word_len: 0.003632
+instruction_override_similarity: 0.029125
+roleplay_similarity: 0.019758
+manipulation_similarity: 0.014748
+num_negations: 0.012837
+num_words: 0.009319
+num_chars: 0.008993
+is_question: 0.006228
+punct_count: 0.006030
+prompt_length_category: 0.004176
+hacking_similarity: 0.003576
+num_sents: 0.003265
+fraud_similarity: 0.002809
+avg_word_len: 0.002562
+num_conditionals: 0.002018
+violence_similarity: 0.001941
+hypothetical_framing_similarity: 0.001646
+num_commands: 0.001621
+illegal_substances_similarity: 0.001462
+is_hacking: 0.000027
+is_violence: 0.000020
+is_fraud: 0.000017
+is_roleplay: 0.000009
+is_instruction_override: 0.000006
+is_hypothetical_framing: 0.000004
+is_illegal_substances: 0.000004
+is_manipulation: 0.000003
 num_verbs: 0.000000
 num_subords: 0.000000

@@ -1,6 +1,7 @@
 """
 classify_outputs.py
 Analyzes LLM outputs using semantic similarity to categorize responses.
+Tested on: GPT-Neo-1.3B (EleutherAI)
 Usage: python src/classify_outputs.py
 """
 import os
@@ -85,7 +86,7 @@ def main():
     with open("results/model_outputs.jsonl", "r", encoding="utf-8") as f:
         results = [json.loads(line) for line in f]
     
-    print(f"Analyzing {len(results)} responses...")
+    print(f"Analyzing {len(results)} responses from GPT-Neo-1.3B...")
     
     for i, r in enumerate(results):
         r["category"] = categorize_response(r.get("generated", ""))
@@ -107,6 +108,7 @@ def main():
     with open("results/classification_report.txt", "w", encoding="utf-8") as f:
         f.write("=" * 60 + "\n")
         f.write("LLM OUTPUT CLASSIFICATION REPORT\n")
+        f.write("Model: GPT-Neo-1.3B (EleutherAI)\n")
         f.write("=" * 60 + "\n\n")
         
         f.write("OVERALL RESPONSE CATEGORIES\n")
@@ -142,6 +144,7 @@ def main():
     
     print("\n" + "=" * 50)
     print("CLASSIFICATION COMPLETE")
+    print("Model: GPT-Neo-1.3B (EleutherAI)")
     print("=" * 50)
     print(f"\nResults saved to:")
     print("  - results/classification_report.txt")

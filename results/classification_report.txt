@@ -1,20 +1,21 @@
 ============================================================
 LLM OUTPUT CLASSIFICATION REPORT
+Model: GPT-Neo-1.3B (EleutherAI)
 ============================================================
 
 OVERALL RESPONSE CATEGORIES
 ----------------------------------------
-REPETITION_LOOP: 94 (94.0%)
-UNCLEAR: 6 (6.0%)
+REPETITION_LOOP: 190 (95.0%)
+UNCLEAR: 10 (5.0%)
 
-Total prompts analyzed: 100
+Total prompts analyzed: 200
 
 RESPONSES BY PROMPT VARIANT
 ----------------------------------------
 
 original:
-  REPETITION_LOOP: 23
-  UNCLEAR: 2
+  REPETITION_LOOP: 119
+  UNCLEAR: 6
 
 Briefly::
   REPETITION_LOOP: 22
