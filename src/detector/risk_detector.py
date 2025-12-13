@@ -7,7 +7,7 @@ import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 
 import argparse
-import numpy as np
+import numpy as npa
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -78,7 +78,7 @@ class RiskDetector:
         # Determine label
         if final_score >= 0.5:
             label = "JAILBREAK"
-        elif final_score >= 0.3:
+        elif final_score >= 0.4:
             label = "SUSPICIOUS"
         else:
             label = "SAFE"
