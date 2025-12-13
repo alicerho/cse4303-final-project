@@ -4,16 +4,15 @@ from pathlib import Path
 
 SCRIPTS = [
     # Data + Training
-    # "python src/data/load_wildjailbreak.py",
-     #"python src/analysis/extract_features.py --in data/augmented_prompts.jsonl --out data/features.npz",
-     #"python src/analysis/analyze_features.py --in data/features.npz --out results/analysis_report.txt",
+     "python src/data/load_wildjailbreak.py",
+     "python src/analysis/extract_features.py --in data/augmented_prompts.jsonl --out data/features.npz",
+     "python src/analysis/analyze_features.py --in data/features.npz --out results/analysis_report.txt",
     
     # Effectiveness Testing
-    #"python src/evaluate/run_model_tests.py --prompts data/augmented_prompts.jsonl --out results/model_outputs.jsonl --max 200",
     'python src/evaluate/run_model_tests.py --prompts data/test_balanced.jsonl --model EleutherAI/gpt-neo-1.3B --out results/model_outputs.jsonl --max 200',
     "python src/classify_outputs.py",
     
-    # Interpretation (ANSWERS YOUR PROPOSAL'S "WHY")
+    # Interpretation
     "python src/analysis/interpret_patterns.py"
 ]
 
