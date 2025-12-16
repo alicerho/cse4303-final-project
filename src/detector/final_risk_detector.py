@@ -11,13 +11,13 @@ Training data features come from extract_features.py:
 
 Usage:
     # Train model (requires data/features.npz)
-    python src/detector/complete_risk_detector.py --train
+    python src/detector/final_risk_detector.py --train
 
     # Inspect model info
-    python src/detector/complete_risk_detector.py --info
+    python src/detector/final_risk_detector.py --info
 
     # Score a single prompt
-    python src/detector/complete_risk_detector.py --text "Your prompt here"
+    python src/detector/final_risk_detector.py --text "Your prompt here"
 """
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
@@ -56,7 +56,7 @@ class PureMLRiskDetector:
         self.extra_feat_names = model_data["extra_feat_names"]
         self.n_embedding_dims = model_data["n_embedding_dims"]
 
-        print(f"[OK] Loaded model trained on {model_data.get('n_samples', 'N/A')} samples")
+        print(f"[OK] Loaded model trained.")
 
         # SemanticFeatureExtractor contains the embedder + precomputed category embeddings.
         # We reuse it at inference so semantic features match training.
@@ -111,11 +111,9 @@ class PureMLRiskDetector:
         probabilities = self.classifier.predict_proba([features])[0]
         jailbreak_prob = float(probabilities[1])
 
-        # Thresholds (these are arbitrary; tune on validation set if desired)
+        # Thresholds
         if jailbreak_prob >= 0.7:
             label = "HIGH RISK - JAILBREAK"
-        elif jailbreak_prob >= 0.5:
-            label = "MODERATE RISK"
         elif jailbreak_prob >= 0.4:
             label = "SUSPICIOUS"
         else:
